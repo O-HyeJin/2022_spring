@@ -5,7 +5,7 @@ import static org.junit.Assert.fail;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 public class JDBCTest {
 	static {
