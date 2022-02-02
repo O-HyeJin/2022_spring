@@ -1,8 +1,8 @@
-package com.comento.project.service;
+package com.comento.project.board.service;
 
 import java.util.List;
 
-import com.comento.project.vo.BoardVO;
+import com.comento.project.board.BoardVO;
 
 public interface BoardService {
 	public void regist(BoardVO board) throws Exception;

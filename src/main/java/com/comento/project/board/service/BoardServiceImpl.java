@@ -1,4 +1,4 @@
-package com.comento.project.service;
+package com.comento.project.board.service;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import com.comento.project.dao.BoardDAO;
-import com.comento.project.vo.BoardVO;
+import com.comento.project.board.BoardVO;
+import com.comento.project.board.dao.BoardDAO;
 
 @Service("boardService")
 public class BoardServiceImpl implements BoardService{

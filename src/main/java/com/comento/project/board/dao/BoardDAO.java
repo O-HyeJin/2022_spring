@@ -1,8 +1,8 @@
-package com.comento.project.dao;
+package com.comento.project.board.dao;
 
 import java.util.List;
 
-import com.comento.project.vo.BoardVO;
+import com.comento.project.board.BoardVO;
 
 public interface BoardDAO {
 	public void create(BoardVO vo) throws Exception;

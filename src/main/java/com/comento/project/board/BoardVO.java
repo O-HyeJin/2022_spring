@@ -1,4 +1,4 @@
-package com.comento.project.vo;
+package com.comento.project.board;
 
 import java.util.Date;
 

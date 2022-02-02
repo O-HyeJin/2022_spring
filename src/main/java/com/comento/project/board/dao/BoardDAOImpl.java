@@ -1,4 +1,4 @@
-package com.comento.project.dao;
+package com.comento.project.board.dao;
 
 import java.util.List;
 
@@ -7,14 +7,14 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import com.comento.project.vo.BoardVO;
+import com.comento.project.board.BoardVO;
 
 @Repository
 public class BoardDAOImpl implements BoardDAO{
 	
 	@Inject
 	private SqlSession sqlSession;
-	private static String nameSpace = "com.comento.project.mappers.board-Mapper";
+	private static String nameSpace = "com.mappers.BoardMapper";
 
 	@Override
 	public void create(BoardVO vo) throws Exception {
