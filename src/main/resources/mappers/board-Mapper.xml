@@ -12,7 +12,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		values(board_seq.nextval, #{title}, #{content}, #{writer}, #{password}, SYSDATE)
 	</insert>
 	
-	<select id="read">
+	<select id="read" resultType="com.comento.project.board.BoardVO">
 		select no, title, content, writer, password, regDate, hit
 		from table_board
 		where no = #{no}
