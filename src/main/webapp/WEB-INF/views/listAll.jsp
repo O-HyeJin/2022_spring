@@ -9,7 +9,7 @@
 	<title>List</title>
 </head>
 <body>
-	<form action="register" method="get">
+	<form action="Write" method="get">
 		<table border="1" style="width: 880px;">
 			<tr>
 	        <td width="77">
