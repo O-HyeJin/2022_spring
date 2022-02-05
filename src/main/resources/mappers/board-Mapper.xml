@@ -8,8 +8,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.mappers.BoardMapper">
  
 	<insert id="create">
-		insert into table_board (title, content, writer, password)
-		values(#{title}, #{content}, #{writer}, #{password})
+		insert into table_board (no, title, content, writer, password, regDate)
+		values(board_seq.nextval, #{title}, #{content}, #{writer}, #{password}, SYSDATE)
 	</insert>
 	
 	<select id="read">
