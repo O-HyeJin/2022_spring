@@ -17,26 +17,40 @@ public class BoardController {
 	@Inject
 	private BoardService boardService;
 	
-	@RequestMapping(value = "/ListAll", method = RequestMethod.GET)
-	public String listAll(Model model) throws Exception {
+	@RequestMapping(value = "/listAll", method = RequestMethod.GET)
+	public void listAll(Model model) throws Exception {
 		model.addAttribute("list", boardService.listAll());
-		return "listAll";
 	}
 	
-	@RequestMapping(value = "/Write", method = RequestMethod.GET)
-	public String wirte() {
-		return "register";
+	@RequestMapping(value = "/register", method = RequestMethod.GET)
+	public void registerView() {
 	}
 	
-	@RequestMapping(value = "/Register", method = RequestMethod.POST)
-	public String regist(BoardVO board) throws Exception {
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
+	public String registerAction(BoardVO board) throws Exception {
 		boardService.register(board);
-		return "redirect:/ListAll";
+		return "redirect:/listAll";
 	}
 	
-	@RequestMapping(value = "/Read", method = RequestMethod.GET)
-	public String read(@RequestParam("no")Integer no, Model model) throws Exception {
+	@RequestMapping(value = "/read", method = RequestMethod.GET)
+	public void read(@RequestParam("no")Integer no, Model model) throws Exception {
 		model.addAttribute(boardService.read(no));
-		return "read";
+	}
+	
+	@RequestMapping(value = "/modify", method = RequestMethod.GET)
+	public void modifyView(Integer no, Model model) throws Exception {
+		model.addAttribute(boardService.read(no));
+	}
+	
+	@RequestMapping(value = "/modify", method = RequestMethod.POST)
+	public String modifyAction(BoardVO board) throws Exception {
+		boardService.modify(board);
+		return "redirect:/listAll";
+	}
+	
+	@RequestMapping(value = "/remove", method = RequestMethod.POST)
+	public String remove(@RequestParam("no")Integer no) throws Exception {
+		boardService.remove(no);
+		return "redirect:/listAll";
 	}
 }
