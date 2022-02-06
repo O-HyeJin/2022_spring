@@ -9,7 +9,7 @@
 	<title>List</title>
 </head>
 <body>
-	<form action="Write" method="get">
+	<form action="register" method="get">
 		<table border="1" style="width: 880px;">
 			<tr>
 	        <td width="77">
@@ -34,7 +34,7 @@
 	        <c:forEach items="${list }" var="boardVO">
 	        <tr>
 	        <td>${boardVO.no }</td>
-	        <td><a href="/Read?no=${boardVO.no }">${boardVO.title }</a></td>
+	        <td><a href="/read?no=${boardVO.no }">${boardVO.title }</a></td>
 	        <td>${boardVO.writer }</td>
 	        <td><fmt:formatDate value="${boardVO.regDate }"
 	        					pattern="yyyy-MM-dd HH:mm"/></td>

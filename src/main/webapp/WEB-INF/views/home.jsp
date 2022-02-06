@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<form action="ListAll" method="get">
+<form action="listAll" method="get">
 <button type="submit">CRUD 게시판 가기</button>
 <h1>
 	Hello world!  
