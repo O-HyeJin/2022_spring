@@ -7,7 +7,7 @@
 <title>Write</title>
 </head>
 <body>
-	<form method="post">
+	<form action="Register" method="post">
 		<p>
 			<label>제목</label>
 			<input type="text" name="title">

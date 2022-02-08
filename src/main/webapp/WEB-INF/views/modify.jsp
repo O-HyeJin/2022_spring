@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h4>글수정 페이지</h4>
-	<form action="modify" method="post">
+	<form action="Modify" method="post">
 		<p>
 			<label>글번호</label>
 			<input type="text" name="no" value="${boardVO.no }" readonly="readonly">
