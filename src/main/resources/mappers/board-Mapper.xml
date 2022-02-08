@@ -18,6 +18,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where no = #{no}
 	</select>
 	
+	<update id="updateHits">
+		update table_board set hit = hit + 1
+		where no = #{no}
+	</update>
+	
 	<update id="update">
 		update table_board set title = #{title}, content = #{content}
 		where no = #{no}

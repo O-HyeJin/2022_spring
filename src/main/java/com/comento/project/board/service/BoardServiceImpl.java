@@ -22,6 +22,7 @@ public class BoardServiceImpl implements BoardService{
 
 	@Override
 	public BoardVO read(Integer no) throws Exception {
+		boardDAO.updateHits(no);
 		return boardDAO.read(no);
 	}
 

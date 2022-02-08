@@ -25,6 +25,11 @@ public class BoardDAOImpl implements BoardDAO{
 	public BoardVO read(Integer no) throws Exception {
 		return sqlSession.selectOne(nameSpace+".read", no);
 	}
+	
+	@Override
+	public void updateHits(Integer no) throws Exception {
+		sqlSession.update(nameSpace+".updateHits", no);
+	}
 
 	@Override
 	public void update(BoardVO vo) throws Exception {
