@@ -4,6 +4,8 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,40 +19,44 @@ public class BoardController {
 	@Inject
 	private BoardService boardService;
 	
-	@RequestMapping(value = "/listAll", method = RequestMethod.GET)
-	public void listAll(Model model) throws Exception {
+	@RequestMapping(value = "/ListAll", method = RequestMethod.GET)
+	public String listAll(Model model) throws Exception {
 		model.addAttribute("list", boardService.listAll());
+		return "listAll";
 	}
 	
-	@RequestMapping(value = "/register", method = RequestMethod.GET)
-	public void registerView() {
+	@GetMapping("/Register")
+	public String registerView() {
+		return "register";
 	}
 	
-	@RequestMapping(value = "/register", method = RequestMethod.POST)
+	@PostMapping("/Register")
 	public String registerAction(BoardVO board) throws Exception {
 		boardService.register(board);
-		return "redirect:/listAll";
+		return "redirect:/ListAll";
 	}
 	
-	@RequestMapping(value = "/read", method = RequestMethod.GET)
-	public void read(@RequestParam("no")Integer no, Model model) throws Exception {
+	@RequestMapping(value = "/Read", method = RequestMethod.GET)
+	public String read(@RequestParam("no")Integer no, Model model) throws Exception {
 		model.addAttribute(boardService.read(no));
+		return "read";
 	}
 	
-	@RequestMapping(value = "/modify", method = RequestMethod.GET)
-	public void modifyView(Integer no, Model model) throws Exception {
+	@GetMapping("/Modify")
+	public String modifyView(Integer no, Model model) throws Exception {
 		model.addAttribute(boardService.read(no));
+		return "modify";
 	}
 	
-	@RequestMapping(value = "/modify", method = RequestMethod.POST)
+	@PostMapping("/Modify")
 	public String modifyAction(BoardVO board) throws Exception {
 		boardService.modify(board);
-		return "redirect:/listAll";
+		return "redirect:/ListAll";
 	}
 	
-	@RequestMapping(value = "/remove", method = RequestMethod.POST)
+	@RequestMapping(value = "/Remove", method = RequestMethod.POST)
 	public String remove(@RequestParam("no")Integer no) throws Exception {
 		boardService.remove(no);
-		return "redirect:/listAll";
+		return "redirect:/ListAll";
 	}
 }
