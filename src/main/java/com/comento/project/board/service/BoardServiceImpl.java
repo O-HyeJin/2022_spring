@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.comento.project.board.BoardVO;
 import com.comento.project.board.dao.BoardDAO;
 
-@Service("boardService")
+@Service
 public class BoardServiceImpl implements BoardService{
 	
 	@Inject
