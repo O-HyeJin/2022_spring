@@ -13,8 +13,9 @@ function modifyAction() {
 	
 	if (userPw == inputPw) {
 		$("form").attr("action", "Modify");
+		$("form").submit();
 	} else {
-		alter("비밀번호가 다릅니다.");
+		alert("비밀번호가 다릅니다.");
 	}
 }
 
@@ -26,7 +27,8 @@ function removeAction() {
 	if (userPw == inputPw) {
 		$("form").attr("action", "Remove");
 		$("form").attr("method", "post");
+		$("form").submit();
 	} else {
-		alter("비밀번호가 다릅니다.");
+		alert("비밀번호가 다릅니다.");
 	}
 }
